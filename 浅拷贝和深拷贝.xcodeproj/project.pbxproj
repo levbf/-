@@ -207,6 +207,7 @@
 				TargetAttributes = {
 					0FEA83301E802DBB005CFE08 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = S83MEQHAUZ;
 						ProvisioningStyle = Automatic;
 					};
 					0FEA83491E802DBB005CFE08 = {
@@ -424,6 +425,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S83MEQHAUZ;
 				INFOPLIST_FILE = "浅拷贝和深拷贝/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.love.bo.-------";
@@ -435,6 +437,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S83MEQHAUZ;
 				INFOPLIST_FILE = "浅拷贝和深拷贝/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.love.bo.-------";
