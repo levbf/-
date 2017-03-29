@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ViewController : UIViewController<NSCopying,NSMutableCopying>
+{
+    NSArray* array;
+}
+@property(nonatomic,copy)NSString* name;
+@property(nonatomic,copy)NSMutableString *mname;
+@property(nonatomic,strong)NSString* strongName;
+@property(nonatomic,retain)NSString* retainName;
 
 @end
 
