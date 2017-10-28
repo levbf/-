@@ -36,7 +36,9 @@
     //strSourceHello:0x103676098,strCopyHello:0x103676098,strMutableHello:0x608000262cc0
 
     //结论:mutableCopy拷贝出来的对象为NSMutableString ，NSMutableArray，NSMutableDictionary
-    //不可变对象copy拷贝出来的对象为NSString，NSArray，NSDictionary，
+    //不可变对象copy拷贝出来的对象为NSString，NSArray，NSDictionary，地址拷贝，
+    //可变对象copy拷贝出来的对象为不可变对象
+    //不可变对象mutablecopy拷贝出来为不可变对象
     
     /********************copy/mutableCopy NSMutableString**************************/
     NSMutableString * nmstr= [[NSMutableString alloc]initWithString:@"World"];
@@ -47,6 +49,7 @@
     //nmstr:0x600000266480, strImable:0xa0000646c726f575,strMutable:0x6000002664c0
 //    NSString *string = [strImutable stringByAppendingString:@"123"];//不可变字符串，
 //    [NMstrCopy appendString:@"123"];//error
+    
     [NMstrMutable appendString:@"123"];//可变字符串
     NSLog(@"strImutable:%@,NMstrCopy:%@,strMutable:%@",strImutable,NMstrCopy,NMstrMutable);
     //strImutable:World,strMutable:World123
@@ -69,10 +72,17 @@
     //copy返回不可变对象，mutablecopy返回可变对象
     NSArray* arrayValue= [NSArray arrayWithObjects:@"1",@"2",@"3", nil];
     NSArray* arrayCopy = [arrayValue copy];
-    NSLog(@"array:%p,arrayCopy:%p",arrayValue,arrayCopy);
-    //array:0x608000241cb0,arrayCopy:0x608000241cb0
+    NSArray * arraymutablecopy = [arrayValue mutableCopy];
+    arrayCopy  = nil;
+    NSLog(@"arrayValue:%@,arrayCopy:%@",arrayValue,arrayCopy);
     
+    NSLog(@"array:%p,arrayCopy:%p,arraymutablecopy:%p",arrayValue,arrayCopy,arraymutablecopy);
+//    array:0x60000004b280,arrayCopy:0x60000004b280,arraymutablecopy:0x608000047830
+    
+    
+//    NSMutableArray *marray = [arrayValue copy];//error
     NSMutableArray *marray = [arrayValue mutableCopy];
+    
     [marray addObject:@"de"];
     [marray removeObjectAtIndex:0];
     NSLog(@"arrayValue:%@,marray:%@",arrayValue,marray);
@@ -138,6 +148,9 @@
     strNMSource = [[NSMutableString alloc]initWithString:@"abc"];
      NSLog(@"Nnewcopy:%@,Nnewstr:%@,NnewNWCopy:%@,NnewNMStr:%@",Nnewcopy,Nnewstr,NnewNMCopy,NnewNMStr);
 //    Nnewcopy:123,Nnewstr:123,NnewNWCopy:123,NnewNMStr:123
+    
+    
+    
     
 
 }
